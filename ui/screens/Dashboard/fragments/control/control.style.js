@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { ContentWrapper } from "../../dashboard.style";
 import { MOBILE } from "../../../../../assets/size";
-import BackgroundImage1 from "../../../../../public/imgs/control-background1.webp";
-import BackgroundImage2 from "../../../../../public/imgs/control-background2.webp";
+// import BackgroundImage1 from "../../../../../public/imgs/control-background1.webp";
+// import BackgroundImage2 from "../../../../../public/imgs/control-background2.webp";
 
 export const Container = styled.div`
 	display: flex;
@@ -49,7 +49,7 @@ export const FragmentTitle = styled.label`
 `;
 
 export const LeftContainer = styled.div`
-	background-image: url(${BackgroundImage1});
+	background-image: url('imgs/control-background1.webp');
 	background-size: cover;
 	background-repeat: no-repeat;
 	border-radius: 60px;
@@ -97,38 +97,38 @@ export const LeftContainer = styled.div`
 `;
 
 export const RightContainer = styled.div`
-	width: calc(48% - 100px);
-	background-image: url(${BackgroundImage2});
-	background-size: cover;
-	background-repeat: no-repeat;
-	border-radius: 60px;
-	display: flex;
-	flex-direction: column;
-	padding: 50px;
+  width: calc(48% - 100px);
+  background-image: url("imgs/control-background2.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
 
-	@media (max-width: 1350px) {
-		width: calc(100% - 100px);
-		margin-top: 30px;
-	}
+  @media (max-width: 1350px) {
+    width: calc(100% - 100px);
+    margin-top: 30px;
+  }
 
-	@media (max-width: ${MOBILE}) {
-		align-items: center;
-		padding: 50px 10px;
-		width: calc(100% - 20px);
-		margin-top: 50px;
-		border-radius: 30px;
-	}
+  @media (max-width: ${MOBILE}) {
+    align-items: center;
+    padding: 50px 10px;
+    width: calc(100% - 20px);
+    margin-top: 50px;
+    border-radius: 30px;
+  }
 
-	& > label:nth-child(2) {
-		font-size: 25px;
-		font-family: "ProximaNovaRegular";
-		margin-top: 30px;
+  & > label:nth-child(2) {
+    font-size: 25px;
+    font-family: "ProximaNovaRegular";
+    margin-top: 30px;
 
-		@media (max-width: ${MOBILE}) {
-			text-align: center;
-			font-size: 16px;
-		}
-	}
+    @media (max-width: ${MOBILE}) {
+      text-align: center;
+      font-size: 16px;
+    }
+  }
 `;
 
 export const SubmitContainer = styled.div`

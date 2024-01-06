@@ -207,8 +207,8 @@ export const Dashboard = ({ stringsObj }) => {
               <Image
                 src={"/imgs/solar-panel.webp"}
                 alt="solar-panel"
-                width={1215}
-                height={817}
+                width={783}
+                height={526}
               />
             </ImageContainer>
           </ContentWrapper>

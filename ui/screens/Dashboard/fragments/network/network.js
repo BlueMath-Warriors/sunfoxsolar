@@ -67,7 +67,7 @@ export const NetworkFragment = ({stringsObj}) => {
 								}}
 							/>
 						</div>
-						<Image src={"/imgs/person.webp"} alt="person" width={849} height={655} />
+						<Image src={"/imgs/person.webp"} alt="person" width={648} height={500} />
 					</LeftContainer>
 				</FragmentContentWrapper>
 			</FragmentWrapper>

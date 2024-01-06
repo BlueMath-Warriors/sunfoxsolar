@@ -44,7 +44,7 @@ export const SolarFragment = ({ stringsObj }) => {
           <LeftContainer>
             <FragmentTitle>{stringsObj.second_block_heading_1}</FragmentTitle>
             <label>{stringsObj.second_block_heading_2}</label>
-            <Image src={"/imgs/worker.webp"} alt="worker" width={200} height={200}  />
+            <Image src={"/imgs/worker.webp"} alt="worker" width={590} height={435}  />
           </LeftContainer>
           <RightContainer>
             <List>
