@@ -1,8 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ToastContainer, Slide } from "react-toastify";
-// import { Provider } from "react-redux";
-// import { store } from "../redux/store";
+import ReduxProvider from "../redux/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <Provider store={store}> */}
+      <ReduxProvider>
         <body className={inter.className}>{children}</body>
         <ToastContainer
           closeButton={true}
@@ -23,7 +22,7 @@ export default function RootLayout({ children }) {
           transition={Slide}
           autoClose={3000}
         />
-      {/* </Provider> */}
+      </ReduxProvider>
     </html>
   );
 }

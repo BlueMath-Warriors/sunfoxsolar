@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { MINI_DESKTOP, MOBILE, SMALL_DESKTOP, TABLET } from "../../../assets/size";
-import { Wrapper } from "../../layout/header/header.style";
-import { Input } from "../../../components/input/input";
-import { COLORS } from "../../../assets/color";
+import { MINI_DESKTOP, MOBILE, SMALL_DESKTOP, TABLET } from "@/assets/size";
+import { Wrapper } from "@/ui/layout/header/header.style";
+import { Input } from "@/components/input/input";
+import { COLORS } from "@/assets/color";
 
 export const Side = styled(Wrapper)`
      @media(max-width: ${MOBILE}) {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { MINI_DESKTOP, MOBILE, SMALL_DESKTOP, TABLET } from "../../../assets/size";
-import { Container, Wrapper } from "../../layout/header/header.style";
-import { COLORS } from "../../../assets/color";
+import { MINI_DESKTOP, MOBILE, SMALL_DESKTOP, TABLET } from "@/assets/size";
+import { Container, Wrapper } from "@/ui/layout/header/header.style";
+import { COLORS } from "@/assets/color";
 
 export const ContentContainer = styled(Container)`
     @media(max-width: ${MOBILE}) {

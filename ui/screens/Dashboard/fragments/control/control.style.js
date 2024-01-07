@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { ContentWrapper } from "../../dashboard.style";
 import { MOBILE } from "../../../../../assets/size";
-// import BackgroundImage1 from "../../../../../public/imgs/control-background1.webp";
-// import BackgroundImage2 from "../../../../../public/imgs/control-background2.webp";
 
 export const Container = styled.div`
 	display: flex;
@@ -98,7 +96,7 @@ export const LeftContainer = styled.div`
 
 export const RightContainer = styled.div`
   width: calc(48% - 100px);
-  background-image: url("imgs/control-background2.webp");
+  background-image: url("/imgs/control-background2.webp");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 60px;

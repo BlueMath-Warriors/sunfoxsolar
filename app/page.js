@@ -1,52 +1,45 @@
-"use client"
-import Image from "next/image";
+"use client";
 import styles from "./page.module.css";
 
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-// import { Root } from "./ui/root/root";
 import { Dashboard } from "../ui/screens/Dashboard/dashboard";
 import React, { Suspense } from "react";
 import { useEffect, useState } from "react";
-// import Page404 from "./ui/screens/404/404";
 import { MobileMenu } from "../ui/screens/Dashboard/header/header.style";
 import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_OPEN_MENU } from "../redux/types";
 import { getStringsForAdId } from "../api/server";
-
 import defaultCopyStrings from "../assets/strings/defaults";
 
-// import Setup1 from "./ui/screens/setup-1/setup1";
-// import Setup2 from "./ui/screens/setup-2/setup2";
-// import Setup3 from "./ui/screens/setup-3/setup3";
-// import Setup4 from "./ui/screens/setup-4/setup4";
+import { useSearchParams } from "next/navigation";
 
 function useQuery() {
-  const { search } = useLocation();
+  const search = useSearchParams();
 
   return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
 export default function Home() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const openMenu = useSelector((state) => state.openMenu);
-  const openMenu = false;
+  const openMenu = useSelector((state) => state.openMenu);
+  //const openMenu = false;
   const variants = {
     open: { opacity: 1, y: 0 },
     closed: { opacity: 1, y: "-100%" },
   };
 
   const [stringObjState, setStringObjState] = useState(defaultCopyStrings);
-  // let query = useQuery();
-  // useEffect(() => {
-  //   const ad_group_id = query.get("ad_group_id");
-  //   if (ad_group_id) {
-  //     getStringsForAdId(dispatch, ad_group_id).then((respStringsObj) => {
-  //       setStringObjState(respStringsObj);
-  //     });
-  //   }
-  // }, [dispatch, query]);
+  let query = useQuery();
+  useEffect(() => {
+    const ad_group_id = query.get("ad_group_id");
+    console.log(ad_group_id);
+    if (ad_group_id) {
+      getStringsForAdId(dispatch, ad_group_id).then((respStringsObj) => {
+        setStringObjState(respStringsObj);
+      });
+    }
+  }, [dispatch, query]);
 
   return (
     <>
