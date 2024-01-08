@@ -37,10 +37,10 @@ import {
   updateModel,
   updateBill,
 } from "@/api/server";
-
+import defaultCopyStrings from "@/assets/strings/defaults";
+import {Layout} from "@/ui/layout/Layout";
 import Image from "next/image";
 import { useRouter, usePathname } from 'next/navigation';
-import {Layout} from "@/ui/layout/Layout";
 
 import ReactGA from "react-ga4";
 ReactGA.initialize(envStrings.google_analytics_id);
@@ -96,7 +96,7 @@ const MONTHS = [
   },
 ];
 
-const Step1 = ({ stringsObj }) => {
+const Step1 = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const pathname = usePathname();
@@ -108,6 +108,8 @@ const Step1 = ({ stringsObj }) => {
   const step = useSelector((state) => state.step);
   const model_id = useSelector((state) => state.model_id);
   const [isError, setIsError] = useState(false);
+
+  const stringsObj = defaultCopyStrings;
 
   // COST VARIABLE FORM MODE 1 (PAST 12 MONTHS)
   const [monthCosts, setMonthCosts] = useState([
@@ -360,16 +362,16 @@ const Step1 = ({ stringsObj }) => {
         <Container style={{ background: "transparent" }}>
           <Side>
             <LeftSide>
-              <Title caption={stringsObj?.power_bill_hero_text} />
+              <Title caption={stringsObj.power_bill_hero_text} />
               <div>
-                <Text caption={stringsObj?.power_bill_hero_subheading_1_pt1} />
+                <Text caption={stringsObj.power_bill_hero_subheading_1_pt1} />
                 <Text
-                  caption={stringsObj?.power_bill_hero_subheading_1_pt2_underline}
+                  caption={stringsObj.power_bill_hero_subheading_1_pt2_underline}
                   style={{ textDecoration: "underline" }}
                 />
-                <Text caption={stringsObj?.power_bill_hero_subheading_1_pt3} />
+                <Text caption={stringsObj.power_bill_hero_subheading_1_pt3} />
               </div>
-              <Description caption={stringsObj?.power_bill_hero_subheading_2} />
+              <Description caption={stringsObj.power_bill_hero_subheading_2} />
               <InfoContainer>
                 <Description caption={"Your Address"} />
                 <Text caption={address} />
@@ -402,7 +404,7 @@ const Step1 = ({ stringsObj }) => {
                       }}
                     />
                   </StepRadio>
-                  <StepLabel>{stringsObj?.power_bill_monthly}</StepLabel>
+                  <StepLabel>{stringsObj.power_bill_monthly}</StepLabel>
                 </Stepper>
                 <Stepper className={mode === 1 ? "active" : "inactive"}>
                   <StepRadio
@@ -419,7 +421,7 @@ const Step1 = ({ stringsObj }) => {
                       }}
                     />
                   </StepRadio>
-                  <StepLabel>{stringsObj?.power_bill_seasonal}</StepLabel>
+                  <StepLabel>{stringsObj.power_bill_seasonal}</StepLabel>
                 </Stepper>
                 <Stepper className={mode === 2 ? "active" : "inactive"}>
                   <StepRadio
@@ -436,7 +438,7 @@ const Step1 = ({ stringsObj }) => {
                       }}
                     />
                   </StepRadio>
-                  <StepLabel>{stringsObj?.power_bill_single}</StepLabel>
+                  <StepLabel>{stringsObj.power_bill_single}</StepLabel>
                 </Stepper>
               </StepContainer>
               <StepContent>
@@ -500,7 +502,7 @@ const Step1 = ({ stringsObj }) => {
               </StepContent>
               <ButtonContainer>
                 <Button
-                  caption={stringsObj?.power_bill_continue}
+                  caption={stringsObj.power_bill_continue}
                   loading={loading}
                   height={56}
                   width={"100%"}

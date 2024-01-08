@@ -33,7 +33,6 @@ export default function Home() {
   let query = useQuery();
   useEffect(() => {
     const ad_group_id = query.get("ad_group_id");
-    console.log(ad_group_id);
     if (ad_group_id) {
       getStringsForAdId(dispatch, ad_group_id).then((respStringsObj) => {
         setStringObjState(respStringsObj);
@@ -43,9 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <Suspense>
-        <Dashboard stringsObj={stringObjState} />
-      </Suspense>
+      <Dashboard stringsObj={stringObjState} />
       <MobileMenu
         // initial={{ opacity: 0, scale: 0.5 }}
         // animate={{ opacity: 1, scale: 1 }}

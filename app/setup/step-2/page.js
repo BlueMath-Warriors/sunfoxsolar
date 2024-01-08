@@ -19,15 +19,15 @@ import { InputSuffix } from "@/components/input/input-suffix";
 import { toast } from "react-toastify";
 import { updateModel, getinstallCostRecommender } from "@/api/server";
 import { SlideAnimation } from "@/components/slide-animation";
-
+import defaultCopyStrings from "@/assets/strings/defaults";
+import { Layout } from "@/ui/layout/Layout";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
-import { Layout } from "@/ui/layout/Layout";
 
 import ReactGA from "react-ga4";
 ReactGA.initialize(envStrings.google_analytics_id);
 
-const Step2 = ({ stringsObj }) => {
+const Step2 = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const pathname = usePathname();
@@ -39,6 +39,8 @@ const Step2 = ({ stringsObj }) => {
   const [size, setSize] = useState(0);
   const [error, setError] = useState(false);
   const step = useSelector((state) => state.step);
+
+  const stringsObj = defaultCopyStrings;
 
   useEffect(() => {
     if (!(step >= 2 && pathname === "/setup/step-2")) {
@@ -120,10 +122,10 @@ const Step2 = ({ stringsObj }) => {
         <ContentContainer style={{ background: "transparent" }}>
           <Side>
             <LeftSide>
-              <Title caption={stringsObj?.install_size_hero_text} />
-              <Text caption={stringsObj?.install_size_hero_subheading_1} />
+              <Title caption={stringsObj.install_size_hero_text} />
+              <Text caption={stringsObj.install_size_hero_subheading_1} />
               <InfoContainer>
-                <Description caption={stringsObj?.install_size_address} />
+                <Description caption={stringsObj.install_size_address} />
                 <Text caption={address} />
                 <Description caption={"Your Email"} style={{ marginTop: 10 }} />
                 <Text caption={email} />
@@ -152,7 +154,7 @@ const Step2 = ({ stringsObj }) => {
                   <label> {address},</label> we recommend an installation size
                   of around <label>{recommendSize} kW</label>.
                 </p>
-                <p>{stringsObj?.install_size_estimate_disclaimer}</p>
+                <p>{stringsObj.install_size_estimate_disclaimer}</p>
                 <InputSuffix
                   placeholder={"Enter your desired installation size"}
                   value={size ? size : ""}

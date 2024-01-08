@@ -4,6 +4,7 @@ import { ToastContainer, Slide } from "react-toastify";
 import ReduxProvider from "../redux/provider";
 import "react-toastify/dist/ReactToastify.css";
 import "../assets/styles/fonts.css";
+import StyledComponentsRegistry from "./registry";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ReduxProvider>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </body>
         <ToastContainer
           closeButton={true}
           hideProgressBar={true}

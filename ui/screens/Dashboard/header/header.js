@@ -10,7 +10,7 @@ import { SET_OPEN_MENU } from "../../../../redux/types";
 import Image from 'next/image';
 
 export const Header = () => {
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	return (
 		<SpaceBetween style={{ width: "100%" }}>

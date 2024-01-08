@@ -32,6 +32,8 @@ const Setup4 = () => {
   const size = useSelector((state) => state.size);
   const [annualPower, setAnnualPower] = useState(0);
 
+  const stringsObj = defaultCopyStrings;
+
   useEffect(() => {
     if (!(step === 4 && pathname === "/setup/step-4")) {
       router.push("/");
@@ -61,98 +63,100 @@ const Setup4 = () => {
     window.location.href = bubble_nav_url;
   };
   return (
-    <SlideAnimation>
-      <ContentContainer style={{ background: "transparent" }}>
-        <Side>
-          <LeftSide>
-            <Text caption={`Report for ${address}`} />
-            <InfoContainer>
-              <Description caption={"Your Email"} />
-              <Text caption={email} />
-              <Description
-                caption={"Monthly Power Bill"}
-                style={{ marginTop: 16 }}
-              />
-              <Text caption={"$500"} />
-              <Description
-                caption={"Installation Size (kW)"}
-                style={{ marginTop: 16 }}
-              />
-              <Text caption={size} />
-              <Description
-                caption={"Installation Cost"}
-                style={{ marginTop: 16 }}
-              />
-              <Text caption={`$${installCost.install_cost_total}`} />
-              <Button
-                caption={"Edit Details"}
-                height={60}
-                width={200}
-                onClick={goDashboard}
-                leftIcon={
-                  <Image
-                    src={"/imgs/pencil.svg"}
-                    alt="pencil"
-                    width={21}
-                    height={21}
-                  />
-                }
-                style={{ background: "#000000", marginTop: 20 }}
-              />
-            </InfoContainer>
-          </LeftSide>
-          <RightSide>
-            <StepContent>
-              <p>
-                <Title caption={"You're Expected to save "} />
-                <Title
-                  caption={` $${parseFloat(
-                    model.annual_model[0].cumulative_savings
-                  ).toFixed(2)} per year!`}
+    <Layer>
+      <SlideAnimation>
+        <ContentContainer style={{ background: "transparent" }}>
+          <Side>
+            <LeftSide>
+              <Text caption={`Report for ${address}`} />
+              <InfoContainer>
+                <Description caption={"Your Email"} />
+                <Text caption={email} />
+                <Description
+                  caption={"Monthly Power Bill"}
+                  style={{ marginTop: 16 }}
                 />
-              </p>
-              <div>
-                <Text caption={"Annual Power Consumed From Solar"} />
-                <Text caption={`${annualPower} (kWh)`} />
-                <Text
-                  caption={"% Power From Solar"}
-                  style={{ marginTop: 20 }}
+                <Text caption={"$500"} />
+                <Description
+                  caption={"Installation Size (kW)"}
+                  style={{ marginTop: 16 }}
                 />
-                <Text caption={"90.45%"} />
-                <Text caption={"Payback Period"} style={{ marginTop: 20 }} />
-                <Text
-                  caption={
-                    model.break_even_view_model.standalone_break_even_string
+                <Text caption={size} />
+                <Description
+                  caption={"Installation Cost"}
+                  style={{ marginTop: 16 }}
+                />
+                <Text caption={`$${installCost.install_cost_total}`} />
+                <Button
+                  caption={"Edit Details"}
+                  height={60}
+                  width={200}
+                  onClick={goDashboard}
+                  leftIcon={
+                    <Image
+                      src={"/imgs/pencil.svg"}
+                      alt="pencil"
+                      width={21}
+                      height={21}
+                    />
                   }
+                  style={{ background: "#000000", marginTop: 20 }}
                 />
-              </div>
-            </StepContent>
-            <ButtonContainer>
-              <Button
-                caption={"View Detailed Report"}
-                height={60}
-                width={"100%"}
-                onClick={navToBubbleReport}
-                rightIcon={
-                  <Image
-                    src={"/imgs/arrow-right-white.svg"}
-                    alt="arrow"
-                    width={21}
-                    height={23}
+              </InfoContainer>
+            </LeftSide>
+            <RightSide>
+              <StepContent>
+                <p>
+                  <Title caption={"You're Expected to save "} />
+                  <Title
+                    caption={` $${parseFloat(
+                      model.annual_model[0].cumulative_savings
+                    ).toFixed(2)} per year!`}
                   />
-                }
-                style={{
-                  fontSize: 20,
-                  justifyContent: "space-between",
-                  padding: "0 40px",
-                  maxWidth: 240,
-                }}
-              />
-            </ButtonContainer>
-          </RightSide>
-        </Side>
-      </ContentContainer>
-    </SlideAnimation>
+                </p>
+                <div>
+                  <Text caption={"Annual Power Consumed From Solar"} />
+                  <Text caption={`${annualPower} (kWh)`} />
+                  <Text
+                    caption={"% Power From Solar"}
+                    style={{ marginTop: 20 }}
+                  />
+                  <Text caption={"90.45%"} />
+                  <Text caption={"Payback Period"} style={{ marginTop: 20 }} />
+                  <Text
+                    caption={
+                      model.break_even_view_model.standalone_break_even_string
+                    }
+                  />
+                </div>
+              </StepContent>
+              <ButtonContainer>
+                <Button
+                  caption={"View Detailed Report"}
+                  height={60}
+                  width={"100%"}
+                  onClick={navToBubbleReport}
+                  rightIcon={
+                    <Image
+                      src={"/imgs/arrow-right-white.svg"}
+                      alt="arrow"
+                      width={21}
+                      height={23}
+                    />
+                  }
+                  style={{
+                    fontSize: 20,
+                    justifyContent: "space-between",
+                    padding: "0 40px",
+                    maxWidth: 240,
+                  }}
+                />
+              </ButtonContainer>
+            </RightSide>
+          </Side>
+        </ContentContainer>
+      </SlideAnimation>
+    </Layer>
   );
 };
 

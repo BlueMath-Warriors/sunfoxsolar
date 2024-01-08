@@ -13,7 +13,8 @@ const initialState = {
 	recommend_size: 0,
 	install_cost: {},
 	model: {},
-	openMenu: false
+	openMenu: false,
+	stringsObj: {},
 };
 
 export default initialState;

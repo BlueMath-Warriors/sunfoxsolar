@@ -20,15 +20,15 @@ import { updateModel } from "@/api/server";
 import { toast } from "react-toastify";
 import { InputPrefix } from "@/components/input/input-suffix";
 import { SlideAnimation } from "@/components/slide-animation";
-
+import defaultCopyStrings from "@/assets/strings/defaults";
+import {Layout} from "@/ui/layout/Layout";
 import Image from "next/image";
 import { useRouter, usePathname } from 'next/navigation';
-import {Layout} from "@/ui/layout/Layout";
 
 import ReactGA from "react-ga4";
 ReactGA.initialize(envStrings.google_analytics_id);
 
-const Step3 = ({stringsObj}) => {
+const Step3 = () => {
 	const router = useRouter();
 	const dispatch = useDispatch();
 	const pathname = usePathname();
@@ -42,6 +42,8 @@ const Step3 = ({stringsObj}) => {
 	const step = useSelector((state) => state.step);
 	const [cost, setCost] = useState(0);
 	const [error, setError] = useState(false);
+
+	const stringsObj = defaultCopyStrings;
 
 	useEffect(() => {
 		if (!(step >= 3 && pathname === "/setup/step-3")) {
@@ -198,11 +200,11 @@ const Step3 = ({stringsObj}) => {
                 <p>
                   In
                   <label> {addr.state} </label>{" "}
-                  {stringsObj?.install_size_estimate_heading_pt_1}{" "}
+                  {stringsObj.install_size_estimate_heading_pt_1}{" "}
                   <label>${installCost.install_cost_per_kw} per kW. </label>{" "}
-                  {stringsObj?.install_size_estimate_heading_pt_2}{" "}
+                  {stringsObj.install_size_estimate_heading_pt_2}{" "}
                   <label>{size} kW </label>{" "}
-                  {stringsObj?.install_size_estimate_heading_pt_3}{" "}
+                  {stringsObj.install_size_estimate_heading_pt_3}{" "}
                   <label>
                     {UsdFormatter.format(
                       parseFloat(installCost.install_cost_total).toFixed(2)
@@ -224,7 +226,7 @@ const Step3 = ({stringsObj}) => {
               </StepContent>
               <ButtonContainer>
                 <Button
-                  caption={stringsObj?.install_cost_continue}
+                  caption={stringsObj.install_cost_continue}
                   height={60}
                   width={"100%"}
                   loading={loading}

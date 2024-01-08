@@ -64,6 +64,11 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 openMenu: action.payload,
             };
+        case types.SET_STRINGS_OBJ:
+            return {
+                ...state,
+                stringsObj: action.payload,
+            }
         default:
             return state;
     }
