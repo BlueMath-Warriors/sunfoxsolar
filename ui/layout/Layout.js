@@ -3,12 +3,12 @@ import { Content } from "./content/content";
 import { Footer } from "./footer/footer";
 import { Header } from "./header/header";
 
-export const Layout = () => {
+export const Layout = ({children}) => {
 	return (
 		<BodyWrapper>
 			<Header />
 			<Body>
-				<Content />
+				<Content children={children} />
 			</Body>
 			<Footer />
 		</BodyWrapper>

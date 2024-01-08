@@ -10,12 +10,12 @@ import { SET_OPEN_MENU } from "../../../../redux/types";
 import Image from 'next/image';
 
 export const Header = () => {
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	return (
 		<SpaceBetween style={{ width: "100%" }}>
 			<LogoWrapper href="/">
-				<Image src={"logo.svg"} width={199} height={40} alt="logo-img" />
+				<Image src={"/imgs/logo.svg"} width={199} height={40} alt="logo-img" />
 			</LogoWrapper>
 			<ToolsWrapper>
 				<Button

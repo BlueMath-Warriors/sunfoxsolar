@@ -22,11 +22,16 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // Middleware: Redux Persist Persisted Reducer
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-          // options like actionSanitizer, stateSanitizer
-      })
-    : compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+//     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+//           // options like actionSanitizer, stateSanitizer
+//       })
+//     : compose;
+
+const composeEnhancers =
+  (typeof window !== "undefined" &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
 
 const store = createStore(
     persistedReducer,

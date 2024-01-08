@@ -1,10 +1,9 @@
-import { Outlet } from "react-router-dom";
 import { Container } from "./content.style";
 
-export const Content = () => {
+export const Content = ({children}) => {
     return (
         <Container>
-            <Outlet />
+            {children}
         </Container>
     );
 };

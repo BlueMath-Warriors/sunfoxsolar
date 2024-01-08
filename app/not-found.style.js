@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MOBILE } from "../../../assets/size";
+import { MOBILE } from "../assets/size";
 
 export const Container = styled.div`
     display: flex;

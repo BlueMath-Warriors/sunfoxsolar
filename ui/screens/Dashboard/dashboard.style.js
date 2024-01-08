@@ -7,7 +7,6 @@ import {
 	TABLET,
 } from "../../../assets/size";
 import { COLORS } from "../../../assets/color";
-// import BackgroundImage from "../../../public/imgs/background.webp";
 import ReactGoogleAutocomplete from "react-google-autocomplete";
 
 export const Body = styled.div`
@@ -20,7 +19,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 100vh;
-  background-image: url("imgs/background.webp");
+  background-image: url("/imgs/background.webp");
   background-size: cover;
   background-repeat: no-repeat;
   border-bottom-right-radius: 60px;

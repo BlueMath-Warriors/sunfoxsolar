@@ -26,7 +26,7 @@ import {
   SET_STEP,
   SET_MODEL_ID,
 } from "../../../redux/types";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { PlaceFragment } from "./fragments/place/place";
 import { SolarFragment } from "./fragments/solar/solar";
 import { ControlFragment } from "./fragments/control/control";
@@ -54,8 +54,8 @@ export const Dashboard = ({ stringsObj }) => {
   const [addr, setAddr] = useState({});
   const [errMail, setErrMail] = useState(false);
   const [errAddress, setErrAddress] = useState("");
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const router = useRouter();
   // console.log(stringsObj)
 
   const goModel = () => {
@@ -90,7 +90,7 @@ export const Dashboard = ({ stringsObj }) => {
         addr,
       },
     });
-    navigate("/setup");
+    router.push("/setup");
     createModel(dispatch).then((model_id) => {
       dispatch({
         type: SET_MODEL_ID,
@@ -107,7 +107,7 @@ export const Dashboard = ({ stringsObj }) => {
         should_recalculate: true,
       }).then(() => {});
     });
-    navigate("/setup");
+    router.push("/setup");
   };
 
   return (
@@ -123,8 +123,9 @@ export const Dashboard = ({ stringsObj }) => {
                 <Image
                   src={"/imgs/solar-panel.webp"}
                   alt="solar-panel"
-                  width={1215}
-                  height={817}
+                  width={783}
+                  height={526}
+                  priority={true}
                 />
               </MobileImageContainer>
               <Description
@@ -209,6 +210,7 @@ export const Dashboard = ({ stringsObj }) => {
                 alt="solar-panel"
                 width={783}
                 height={526}
+                priority={true}
               />
             </ImageContainer>
           </ContentWrapper>

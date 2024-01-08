@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Wrapper, ContentWrapper } from "../../dashboard.style";
 import { MOBILE, TABLET } from "../../../../../assets/size";
 import { COLORS } from "../../../../../assets/color";
-//import BackgroundImage from "../../../../../public/imgs/background1.webp";
 
 export const Container = styled.div`
 	display: flex;
@@ -15,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const FragmentWrapper = styled(Wrapper)`
-	background-image: url('imgs/background1.webp');
+	background-image: url('/imgs/background1.webp');
 	background-size: cover;
 	background-repeat: no-repeat;
 	border-radius: 60px;
