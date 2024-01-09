@@ -10,6 +10,7 @@ import {
   ListLabel,
   ListTitle,
   MobileImageContainer,
+  TabletImageContainer,
   RightContainer,
 } from "./solar.style";
 import Image from "next/image";
@@ -42,7 +43,12 @@ export const SolarFragment = ({ stringsObj }) => {
           <LeftContainer>
             <FragmentTitle>{stringsObj.second_block_heading_1}</FragmentTitle>
             <label>{stringsObj.second_block_heading_2}</label>
-            <Image src={"/imgs/worker.webp"} alt="worker" width={590} height={435}  />
+            <Image
+              src={"/imgs/worker.webp"}
+              alt="worker"
+              width={590}
+              height={435}
+            />
           </LeftContainer>
           <RightContainer>
             <List>
@@ -172,8 +178,23 @@ export const SolarFragment = ({ stringsObj }) => {
               </ListItem>
             </List>
           </RightContainer>
+          <TabletImageContainer>
+            <div className="tab-worker-image">
+              <Image
+                src={"/imgs/worker.webp"}
+                alt="worker"
+                fill
+              />
+            </div>
+          </TabletImageContainer>
           <MobileImageContainer>
-            <Image src={"/imgs/worker.webp"} alt="worker" width={200} height={200} />
+            <div className="mobile-worker-image">
+              <Image
+                src={"/imgs/worker-mobile.webp"}
+                alt="worker"
+                fill
+              />
+            </div>
           </MobileImageContainer>
         </FragmentContentWrapper>
       </FragmentWrapper>

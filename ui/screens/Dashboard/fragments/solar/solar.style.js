@@ -100,27 +100,56 @@ export const LeftContainer = styled.div`
 `;
 
 export const MobileImageContainer = styled.div`
-	display: none;
+  display: none;
 
-	@media (max-width: ${TABLET}) {
-		display: flex;
-		margin-left: -46px;
-		margin-bottom: -100px;
-	}
+  @media (max-width: ${TABLET}) {
+    display: none;
+  }
 
-	@media (max-width: ${MOBILE}) {
-		margin-left: 0px;
-	}
+  @media (max-width: ${MOBILE}) {
+    display: block;
+    margin-left: 0px;
+    margin-bottom: -103px;
+		width: 100%;
+  }
 
-	& > img {
-		width: 90%;
-		border-bottom-left-radius: 60px;
+  img {
+    position: relative !important;
+    border-bottom-left-radius: 30px;
+    margin-left: 0px;
+  }
 
-		@media (max-width: ${MOBILE}) {
-			width: 80%;
-			border-bottom-left-radius: 30px;
-		}
-	}
+  & > .mobile-worker-image {
+    @media (max-width: ${MOBILE}) {
+      width: 80% !important;
+      border-bottom-left-radius: 30px;
+    }
+  }
+`;
+
+export const TabletImageContainer = styled.div`
+  display: none;
+
+  @media (max-width: ${TABLET}) {
+    display: flex;
+    margin-left: -103px;
+    margin-bottom: -100px;
+		width: 100%;
+  }
+
+  @media (max-width: ${MOBILE}) {
+    display: none;
+  }
+
+  img {
+    position: relative !important;
+    border-bottom-left-radius: 60px !important;
+  }
+
+  & > .tab-worker-image {
+    width: 90% !important;
+    border-bottom-left-radius: 60px !important;
+  }
 `;
 
 export const RightContainer = styled.div`
