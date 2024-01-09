@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Wrapper, ContentWrapper } from "../../dashboard.style";
-import { MOBILE, TABLET } from "../../../../../assets/size";
+import { MOBILE, TABLET, DESKTOP } from "../../../../../assets/size";
 
 export const Container = styled.div`
 	display: flex;
@@ -98,11 +98,15 @@ export const LeftContainer = styled.div`
 		}
 	}
 
-	& > img {
+	& > .personImg {
 		width: 50%;
 		position: absolute;
 		right: -66px;
 		bottom: -200px;
+
+		img {
+			position: relative !important;
+		}
 
 		@media (max-width: ${TABLET}) {
 			width: 100%;
@@ -110,5 +114,10 @@ export const LeftContainer = styled.div`
 			right: 0px;
 			bottom: 0px;
 		}
+
+		@media (min-width: ${DESKTOP}) {
+			width: 44%;
+		}
 	}
 `;
+

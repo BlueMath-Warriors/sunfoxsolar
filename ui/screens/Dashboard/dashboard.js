@@ -56,7 +56,6 @@ export const Dashboard = ({ stringsObj }) => {
   const [errAddress, setErrAddress] = useState("");
   const dispatch = useDispatch();
   const router = useRouter();
-  // console.log(stringsObj)
 
   const goModel = () => {
     if (!address || !addr) {
@@ -121,10 +120,10 @@ export const Dashboard = ({ stringsObj }) => {
               <Text caption={stringsObj.hero_heading_2} />
               <MobileImageContainer>
                 <Image
-                  src={"/imgs/solar-panel.webp"}
+                  src={"/imgs/solar-panel-mobile.webp"}
                   alt="solar-panel"
-                  width={783}
-                  height={526}
+                  width={360}
+                  height={242}
                   priority={true}
                 />
               </MobileImageContainer>
@@ -208,8 +207,9 @@ export const Dashboard = ({ stringsObj }) => {
               <Image
                 src={"/imgs/solar-panel.webp"}
                 alt="solar-panel"
-                width={783}
-                height={526}
+                fill={true}
+                objectFit="cover"
+                style={{inset: "unset"}}
                 priority={true}
               />
             </ImageContainer>

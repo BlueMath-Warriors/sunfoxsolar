@@ -113,42 +113,59 @@ export const MobileImageContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 2;
-	position: relative;
+  width: 100%;
+  height: 122%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
 
-	@media (max-width: ${MOBILE}) {
-		display: none;
-	}
+  @media (max-width: ${MOBILE}) {
+    display: none;
+  }
 
-	& > img {
-		width: 96%;
-		position: absolute;
-		margin-left: 200px;
+  @media (max-width: ${DESKTOP}) {
+    height: 108% !important;
+  }
 
-		@media (max-width: ${DESKTOP}) {
-			width: 96%;
-			margin-left: 160px;
-		}
+  @media (max-width: ${SMALL_DESKTOP}) {
+    height: 96% !important;
+  }
 
-		@media (max-width: ${SMALL_DESKTOP}) {
-			width: 100%;
-			margin-left: 140px;
-		}
+  @media (max-width: ${MINI_DESKTOP}) {
+    height: 85% !important;
+  }
 
-		@media (max-width: ${MINI_DESKTOP}) {
-			width: 110%;
-			margin-left: 80px;
-		}
+  @media (max-width: ${TABLET}) {
+    height: 80% !important;
+  }
 
-		@media (max-width: ${TABLET}) {
-			width: 105%;
-			margin-left: 40px;
-		}
-	}
+  & > img {
+    width: 96% !important;
+    position: absolute;
+    margin-left: 200px !important;
+
+    @media (max-width: ${DESKTOP}) {
+      width: 96% !important;
+      margin-left: 160px !important;
+    }
+
+    @media (max-width: ${SMALL_DESKTOP}) {
+      width: 100% !important;
+      margin-left: 140px !important;
+    }
+
+    @media (max-width: ${MINI_DESKTOP}) {
+      width: 110% !important;
+      margin-left: 80px !important;
+    }
+
+    @media (max-width: ${TABLET}) {
+      width: 105% !important;
+      margin-left: 40px !important;
+    }
+  }
 `;
 
 export const Background = styled.div`
