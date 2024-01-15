@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+    <input id="autocomplete" placeholder="Enter a place" type="text" />
+    <script>
+        let autocomplete;
+        function initAutoComplete() {
+            autocomplete = new google.maps.places.Autocomplete(
+                document.getElementById("autocomplete"),
+                {
+                    types: ['establishment']
+                }
+            )
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLs8yb_ANP72I7nKNkiYd51P6zh_R5_4Q&libraries=places&callback=initAutoComplete" async defer></script>
+  </body>
+</html>
