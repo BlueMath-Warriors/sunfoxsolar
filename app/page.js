@@ -101,5 +101,5 @@ export default function Home() {
         </div>
       </MobileMenu>
     </Suspense>
-  );
+  )
 }
